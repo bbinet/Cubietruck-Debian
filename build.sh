@@ -170,7 +170,7 @@ debootstrap --no-check-gpg --arch=armhf --foreign wheezy $DEST/output/sdcard/
 # we need this
 cp /usr/bin/qemu-arm-static $DEST/output/sdcard/usr/bin/
 # enable arm binary format so that the cross-architecture chroot environment will work
-test -e /proc/sys/fs/binfmt_misc/qemu-arm || update-binfmts --enable qemu-arm
+test -e /proc/sys/fs/binfmt_misc/qemu-arm || update-binfmts --import qemu-arm
 # mount proc inside chroot
 mount -t proc chproc $DEST/output/sdcard/proc
 # second stage unmounts proc 
